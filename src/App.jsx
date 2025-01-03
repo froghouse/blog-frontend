@@ -7,6 +7,9 @@ const PostList = () => {
   const [loading, setLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = parseInt(searchParams.get('page') || '1');
+  // Set page title
+  const NDASH_UNICODE = '\u2013';
+  document.title = `Blog ${NDASH_UNICODE} Tomas Landberg`;
 
   useEffect(() => {
     setLoading(true);
@@ -115,6 +118,7 @@ const SinglePost = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const navigate = useNavigate();
+  const NDASH_UNICODE = '\u2013';
 
   useEffect(() => {
     fetch(`http://localhost:5000/post/${id}`)
@@ -137,6 +141,7 @@ const SinglePost = () => {
   }, [id]);
 
   if (loading) {
+    document.title = 'Loading...';
     return (
       <div className="max-w-4xl mx-auto p-4">
         <div className="text-center mt-8">Loading...</div>
@@ -145,6 +150,7 @@ const SinglePost = () => {
   }
 
   if (error) {
+    document.title = `404 ${NDASH_UNICODE} Post not found`;
     return (
       <div className="max-w-4xl mx-auto p-4">
         <div className="text-center mt-8">
@@ -161,6 +167,7 @@ const SinglePost = () => {
     );
   }
 
+  document.title = `${post.title} ${NDASH_UNICODE} Tomas Landberg`;
   return (
     <div className="max-w-4xl mx-auto p-4">
       <Link 
@@ -186,6 +193,7 @@ const CreatePost = () => {
     title: '',
     content: ''
   });
+  const NDASH_UNICODE = '\u2013';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -205,6 +213,7 @@ const CreatePost = () => {
     }
   };
 
+  document.title = `Create New Post ${NDASH_UNICODE} Tomas Landberg`;
   return (
     <div className="max-w-4xl mx-auto p-4">
       <Link 
