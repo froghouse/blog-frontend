@@ -31,23 +31,27 @@ A modern blog frontend built with React and Vite, featuring a clean UI and seaml
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/blog-frontend.git
 cd blog-frontend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create a `.env` file in the root directory:
+
 ```env
 VITE_API_URL=http://localhost:5000  # Development
 # VITE_API_URL=https://api.yourdomain.com  # Production
 ```
 
 4. Start the development server:
+
 ```bash
 npm run dev
 ```
