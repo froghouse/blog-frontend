@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate, useSearchParams } from 'react-router-dom';
 
 const PostList = () => {
@@ -117,7 +117,7 @@ const SinglePost = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const NDASH_UNICODE = '\u2013';
 
   useEffect(() => {
@@ -155,7 +155,7 @@ const SinglePost = () => {
       <div className="max-w-4xl mx-auto p-4">
         <div className="text-center mt-8">
           <h1 className="text-4xl font-bold text-red-500 mb-4">404</h1>
-          <p className="text-xl mb-4">Oops! This post doesn't exist.</p>
+          <p className="text-xl mb-4">Oops! This post doesn&apos;t exist.</p>
           <Link 
             to="/" 
             className="text-blue-500 hover:underline"
